@@ -11,24 +11,29 @@
 - [Primer Proyecto Selenium](#primer-proyecto-selenium)
 - [Tabla de contenidos](#tabla-de-contenidos)
   - [Introducción](#introducción)
-    - [Empiezo el proyecto creando un entorno virtual de python:](#empiezo-el-proyecto-creando-un-entorno-virtual-de-python)
-      - [Importe la libreria](#importe-la-libreria)
-      - [Inicie la sesion:](#inicie-la-sesion)
-      - [URL a la que queremos ir](#url-a-la-que-queremos-ir)
-      - [Solicita informacion al navegador](#solicita-informacion-al-navegador)
-      - [Imprima resultado](#imprima-resultado)
-      - [Cerrar el navegador y finalizar la sesión de WebDriver.](#cerrar-el-navegador-y-finalizar-la-sesión-de-webdriver)
-      - [Establecer estrategia de espera](#establecer-estrategia-de-espera)
-      - [Encuentra el elemento](#encuentra-el-elemento)
-      - [Realice acciones sobre el elemento](#realice-acciones-sobre-el-elemento)
-      - [Solicitar infomacion de un elemento](#solicitar-infomacion-de-un-elemento)
+  - [Empiezo el proyecto creando un entorno virtual de python:](#empiezo-el-proyecto-creando-un-entorno-virtual-de-python)
+    - [Importe la libreria](#importe-la-libreria)
+    - [Inicie la sesion:](#inicie-la-sesion)
+    - [URL a la que queremos ir](#url-a-la-que-queremos-ir)
+    - [Solicita informacion al navegador](#solicita-informacion-al-navegador)
+    - [Imprima resultado](#imprima-resultado)
+    - [Cerrar el navegador y finalizar la sesión de WebDriver.](#cerrar-el-navegador-y-finalizar-la-sesión-de-webdriver)
+    - [Establecer estrategia de espera](#establecer-estrategia-de-espera)
+    - [Encuentra el elemento](#encuentra-el-elemento)
+    - [Realice acciones sobre el elemento](#realice-acciones-sobre-el-elemento)
+    - [Solicitar infomacion de un elemento](#solicitar-infomacion-de-un-elemento)
     - [Ejemplo](#ejemplo)
     - [Capturas de Pantalla](#capturas-de-pantalla)
 
 ## Introducción
 [Tabla de contenidos](#tabla-de-contenidos)
 
-### Empiezo el proyecto creando un entorno virtual de python:
+> [!NOTE]
+> En este ejercicio vamos a practicar con selenium y  la página de practica [GreenKart](https://rahulshettyacademy.com/seleniumPractise/#/). Simularemos la compra de un producto utilizando esta libreria.
+
+## Empiezo el proyecto creando un entorno virtual de python:
+[Tabla de contenidos](#tabla-de-contenidos)
+
 ```bash
 # Crea un entorno virtual
 python3 -m venv venv
@@ -49,34 +54,34 @@ title = driver.title
 print(title)
 driver.quit()
 ```
-#### Importe la libreria
+### Importe la libreria
 ```python
 from selenium import webdriver
 ```
 
-#### Inicie la sesion:
+### Inicie la sesion:
 ```python
 driver = webdriver.Chrome()
 ```
-#### URL a la que queremos ir
+### URL a la que queremos ir
 ```python
 driver.get("https://github.com/jlimonesHer")
 ```
-#### Solicita informacion al navegador
+### Solicita informacion al navegador
   - Hay muchos tipos de información sobre el navegador que puede solicitar, incluidos identificadores de ventanas, tamaño/posición del navegador, cookies, alertas, etc
 ```python
 title = driver.title
 ```
-#### Imprima resultado
+### Imprima resultado
 ```python
 print(title)
 ```
-#### Cerrar el navegador y finalizar la sesión de WebDriver.
+### Cerrar el navegador y finalizar la sesión de WebDriver.
 ```python
 driver.quit()
 ```
 
-#### Establecer estrategia de espera
+### Establecer estrategia de espera
 - La función driver.implicitly_wait(t) en Selenium establece un tiempo de espera implícito para la búsqueda de elementos. Este tiempo de espera se aplica de manera global a todas las búsquedas de elementos realizadas por el WebDriver.
 
 - La función toma un argumento t, que es el tiempo de espera en segundos. En tu ejemplo, driver.implicitly_wait(0.5) significa que Selenium esperará hasta 0.5 segundos antes de lanzar una excepción si no puede encontrar un elemento inmediatamente. Esto es útil para manejar situaciones en las que los elementos tardan un poco en cargarse después de que la página se ha cargado.
@@ -85,7 +90,7 @@ driver.quit()
 driver.implicitly_wait(0.5)
 ```
 
-#### Encuentra el elemento
+### Encuentra el elemento
 - La mayoria de las sesiones de Selenium estan relacionados con elementos y debes encontrarlo para ello:
 ```python
 from selenium.webdriver.common.by import By 
@@ -144,14 +149,14 @@ element = driver.find_element(By.NAME, "mi_nombre")
 ```
 - 
 
-#### Realice acciones sobre el elemento
+### Realice acciones sobre el elemento
 
 ```python
 text_box.send_keys("Selenium")
 submit_button.click()
 ```
 
-#### Solicitar infomacion de un elemento
+### Solicitar infomacion de un elemento
 ```python
 text = message.text
 ```
@@ -167,6 +172,7 @@ from selenium.webdriver.common.by import By
 
 - Probamos que es la pagina deseada:
 ```python
+driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
 title = driver.title
 assert title == "GreenKart - veg and fruits kart"
 ```
