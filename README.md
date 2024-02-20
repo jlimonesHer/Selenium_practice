@@ -22,14 +22,14 @@
     - [Encuentra el elemento](#encuentra-el-elemento)
     - [Realice acciones sobre el elemento](#realice-acciones-sobre-el-elemento)
     - [Solicitar infomacion de un elemento](#solicitar-infomacion-de-un-elemento)
-    - [Ejemplo](#ejemplo)
+  - [Ejercicio 1](#ejercicio-1)
+    - [Solucion Ejercicio 1](#solucion-ejercicio-1)
     - [Capturas de Pantalla](#capturas-de-pantalla)
+  - [Ejercicio 2](#ejercicio-2)
+    - [Solucion Ejercicio 1](#solucion-ejercicio-1-1)
 
 ## Introducción
 [Tabla de contenidos](#tabla-de-contenidos)
-
-> [!NOTE]
-> En este ejercicio vamos a practicar con selenium y  la página de practica [GreenKart](https://rahulshettyacademy.com/seleniumPractise/#/). Simularemos la compra de un producto utilizando esta libreria.
 
 ## Empiezo el proyecto creando un entorno virtual de python:
 [Tabla de contenidos](#tabla-de-contenidos)
@@ -161,7 +161,13 @@ submit_button.click()
 text = message.text
 ```
 
-### Ejemplo
+## Ejercicio 1
+[Tabla de contenidos](#tabla-de-contenidos)
+
+> [!NOTE]
+> En este ejercicio vamos a practicar con selenium y  la página de practica [GreenKart](https://rahulshettyacademy.com/seleniumPractise/#/). Simularemos la compra de un producto utilizando esta libreria.
+
+### Solucion Ejercicio 1
 [Tabla de contenidos](#tabla-de-contenidos)
 
 - Importamos dependencias:
@@ -258,3 +264,11 @@ from PIL import Image
 driver.save_screenshot("pantalla_despues_proceed.png")
 ```
 
+## Ejercicio 2
+[Tabla de contenidos](#tabla-de-contenidos)
+
+> [!NOTE]
+> En este ejercicio vamos a practicar con selenium y  la página de practica [GreenKart](https://rahulshettyacademy.com/seleniumPractise/#/). Simularemos la compra de varios productos utilizando esta libreria y POO(Programacion Orientadada a Objetos).
+
+### Solucion Ejercicio 1
+[Tabla de contenidos](#tabla-de-contenidos)
