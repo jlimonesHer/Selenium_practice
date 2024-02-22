@@ -119,7 +119,6 @@ class GreenKartTest:
         self.complet_buy()
 
 
-
 green = GreenKartTest()
 green.driver.implicitly_wait(0.5)
 

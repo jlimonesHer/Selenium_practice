@@ -62,34 +62,60 @@ class InputModel:
             if options[index]:
                 checks[index].click()
 
-    def open_windows(self):
-        """Este método simplemente hace click en el boton, abre la nueva ventana y cambia el foco de una ventana a otra
+    def open_window(self):
+        """Este método simplemente hace click en el boton, abre la nueva ventana y cambia el foco de una ventana a otra.
+        los tiempos de espera los dejamos para ver su funcionamiento.
         """
         button = self.driver.find_element(by=By.ID, value="openwindow")
         button.click()
-        time.sleep(5)
+        time.sleep(1)
         handles = self.driver.window_handles
-        time.sleep(5)
-        nueva_ventana = handles[-1]
-        time.sleep(5)
-        self.driver.switch_to.window(nueva_ventana)
-        time.sleep(5)
+        time.sleep(1)
+        new_window = handles[-1]
+        time.sleep(1)
+        self.driver.switch_to.window(new_window)
+        time.sleep(1)
 
         # Realizar acciones en la nueva ventana (si es necesario)
         # ...
 
+        # Cerrar ventana actual
+        self.driver.close()
         # Regresar a la ventana principal
         self.driver.switch_to.window(handles[0])
+
+    def open_tab(self):
+        """Este método simplemente hace click en el boton, abre la nueva pestaña y cambia el foco de una pestaña a otra.
+        los tiempos de espera los dejamos para ver su funcionamiento.
+        """
+        button = self.driver.find_element(by=By.ID, value="opentab")
+        button.click()
+        time.sleep(1)
+        handles = self.driver.window_handles
+        time.sleep(1)
+        new_tab = handles[-1]
+        time.sleep(1)
+        self.driver.switch_to.window(new_tab)
+        time.sleep(1)
+
+        # Realizar acciones en la nueva pestaña (si es necesario)
+        # ...
+
+        # Cerrar pestaña actual
+        self.driver.close()
+
+        # Regresar a la pestaña principal
+        self.driver.switch_to.window(handles[0])
          
-    
+    def read_table(self):
+        """Esta función Lee y muestra todos los datos de la primera tabla.
+        """
+        table = self.driver.find_element(by=By.NAME, value='courses')
+        rows = self.driver.find_elements(by=By.XPATH, value='//*[@name="courses"]/tbody/tr')
+        for row in rows:
+            print(row.text)
 
-
-
-
-
-
-
-
+            
 form = InputModel()
 
 options = (True, False, True)
@@ -102,7 +128,11 @@ form.selectExample(2)
 
 form.checkbox(options)
 
-form.open_windows()
+form.open_window()
+
+form.open_tab()
+
+form.read_table()
 
 time.sleep(2)
 form.driver.quit()
