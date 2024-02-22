@@ -22,14 +22,21 @@
     - [Encuentra el elemento](#encuentra-el-elemento)
     - [Realice acciones sobre el elemento](#realice-acciones-sobre-el-elemento)
     - [Solicitar infomacion de un elemento](#solicitar-infomacion-de-un-elemento)
+    - [Capturas de Pantalla](#capturas-de-pantalla)
   - [Ejercicio 1](#ejercicio-1)
     - [Solucion Ejercicio 1](#solucion-ejercicio-1)
-    - [Capturas de Pantalla](#capturas-de-pantalla)
   - [Ejercicio 2](#ejercicio-2)
     - [Solucion Ejercicio 2](#solucion-ejercicio-2)
+  - [Ejercicio 3](#ejercicio-3)
+    - [Solucion Ejercicio 4](#solucion-ejercicio-4)
 
 ## Introducción
 [Tabla de contenidos](#tabla-de-contenidos)
+
+[Documentacion de Selenium](https://www.selenium.dev/documentation/)
+
+- Selenium es un proyecto para una variedad de herramientas y bibliotecas que permiten y respaldan la automatización de navegadores web.
+- Proporciona extensiones para emular la interaccion del usuario con los navegadores, un servidor de distribucion para escalar la asignacion de navegadores y la infraestructura para implementaciones de la especificación [W3C WebDriver](https://www.w3.org/TR/webdriver/) que le permite escribir código intercambiable para los principales navegadores web.
 
 ## Empiezo el proyecto creando un entorno virtual de python:
 [Tabla de contenidos](#tabla-de-contenidos)
@@ -161,6 +168,23 @@ submit_button.click()
 text = message.text
 ```
 
+### Capturas de Pantalla
+[Tabla de contenidos](#tabla-de-contenidos)
+
+- Debemos intalar Pillow para selenium
+```python
+pip install selenium Pillow
+```
+
+- Despues importamos la libreria
+```python
+from PIL import Image
+```
+- Ejecutamos la funcion save_screenshot("nombre_captura"):
+```python
+driver.save_screenshot("pantalla_despues_proceed.png")
+```
+
 ## Ejercicio 1
 [Tabla de contenidos](#tabla-de-contenidos)
 
@@ -246,22 +270,6 @@ print(select_text)
 ```python
 btnProceed = driver.find_element(by=By.XPATH, value='//button[contains(text(), "Proceed")]')
 btnProceed.click()
-```
-### Capturas de Pantalla
-[Tabla de contenidos](#tabla-de-contenidos)
-
-- Debemos intalar Pillow para selenium
-```python
-pip install selenium Pillow
-```
-
-- Despues importamos la libreria
-```python
-from PIL import Image
-```
-- Ejecutamos la funcion save_screenshot("nombre_captura"):
-```python
-driver.save_screenshot("pantalla_despues_proceed.png")
 ```
 
 ## Ejercicio 2
@@ -408,4 +416,17 @@ products = {
 green.complete_process(products)
 
 green.driver.quit()
+```
+
+## Ejercicio 3
+[Tabla de contenidos](#tabla-de-contenidos)
+
+> [!NOTE]
+> En este ejercicio seguimos practicando con Selenium y  la página de practica [GreenKart](https://rahulshettyacademy.com/AutomationPractice/) en la que tenemos todos los tipos de input html para ver como se manejan. Crearemos un objeto y un metodo para cada tipo de campo
+
+### Solucion Ejercicio 4
+[Tabla de contenidos](#tabla-de-contenidos)
+
+```python
+
 ```
