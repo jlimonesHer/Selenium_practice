@@ -573,7 +573,7 @@ form.driver.quit()
 ```
 
 > [!NOTE]
-> Divierte buscado en los demas elementos de la web para apredender mas sobre selenium.
+> Divierte buscando en los demas elementos de la web para apredender mas sobre selenium.
 
 > [!WARNING]
 > Las páginas de práctica no me pertenecen, simplemente las encontre buscando por la red, En la documentación oficial de **Selenium** encontraras las herramientas necesarias para aprender y practicar.
